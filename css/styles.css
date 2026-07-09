@@ -4,16 +4,16 @@
    ============================================ */
 
 :root {
-  --color-bg: #faf9f7;
-  --color-bg-alt: #f0eeeb;
-  --color-bg-dark: #1a1a2e;
-  --color-text: #2d2d3a;
-  --color-text-light: #6b6b7b;
-  --color-text-muted: #9b9bab;
-  --color-accent: #e85d4a;
-  --color-accent-light: #f4a99e;
-  --color-accent-dark: #c94a38;
-  --color-border: #e8e6e3;
+  --color-bg: #f5f5f5;
+  --color-bg-alt: #e8e8e8;
+  --color-bg-dark: #2d2d2d;
+  --color-text: #2a2a2a;
+  --color-text-light: #666666;
+  --color-text-muted: #999999;
+  --color-accent: #555555;
+  --color-accent-light: #888888;
+  --color-accent-dark: #3a3a3a;
+  --color-border: #d4d4d4;
   --color-white: #ffffff;
 
   --font-ja: 'Noto Sans JP', sans-serif;
@@ -71,7 +71,7 @@ img {
   right: 0;
   z-index: 1000;
   height: var(--header-height);
-  background: rgba(250, 249, 247, 0.85);
+  background: rgba(245, 245, 245, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid transparent;
@@ -80,7 +80,7 @@ img {
 
 .header--scrolled {
   border-bottom-color: var(--color-border);
-  background: rgba(250, 249, 247, 0.95);
+  background: rgba(245, 245, 245, 0.95);
 }
 
 .header__inner {
@@ -188,8 +188,8 @@ img {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(232, 93, 74, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(26, 26, 46, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(85, 85, 85, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(45, 45, 45, 0.04) 0%, transparent 60%),
     var(--color-bg);
 }
 
@@ -454,7 +454,7 @@ img {
 .message__photo-placeholder {
   width: 100%;
   aspect-ratio: 3/4;
-  background: linear-gradient(135deg, var(--color-bg-alt) 0%, #e0ddd8 100%);
+  background: linear-gradient(135deg, var(--color-bg-alt) 0%, #d0d0d0 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -468,7 +468,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, transparent 40%, rgba(232, 93, 74, 0.1) 100%);
+  background: linear-gradient(135deg, transparent 40%, rgba(85, 85, 85, 0.08) 100%);
 }
 
 .message__photo-initial {
@@ -616,12 +616,12 @@ img {
   background:
     repeating-linear-gradient(
       45deg,
-      rgba(232, 93, 74, 0.15) 0px,
-      rgba(232, 93, 74, 0.15) 1px,
+      rgba(136, 136, 136, 0.15) 0px,
+      rgba(136, 136, 136, 0.15) 1px,
       transparent 1px,
       transparent 12px
     ),
-    linear-gradient(135deg, rgba(232, 93, 74, 0.2) 0%, rgba(26, 26, 46, 0.4) 100%);
+    linear-gradient(135deg, rgba(102, 102, 102, 0.2) 0%, rgba(45, 45, 45, 0.4) 100%);
 }
 
 /* ============================================
@@ -650,7 +650,7 @@ img {
 .btn--primary:hover {
   background: var(--color-accent-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(232, 93, 74, 0.3);
+  box-shadow: 0 4px 16px rgba(85, 85, 85, 0.2);
 }
 
 .section--recruit .btn--primary {
@@ -722,7 +722,7 @@ img {
   font-size: 0.72rem;
   font-weight: 500;
   color: var(--color-accent);
-  background: rgba(232, 93, 74, 0.08);
+  background: rgba(85, 85, 85, 0.08);
   padding: 4px 10px;
   border-radius: 4px;
   white-space: nowrap;
@@ -779,15 +779,15 @@ img {
 }
 
 .article-card__thumb-bg--1 {
-  background: linear-gradient(135deg, #e85d4a 0%, #f4a99e 50%, #faf9f7 100%);
+  background: linear-gradient(135deg, #666666 0%, #999999 50%, #f5f5f5 100%);
 }
 
 .article-card__thumb-bg--2 {
-  background: linear-gradient(135deg, #1a1a2e 0%, #3d3d5c 50%, #6b6b7b 100%);
+  background: linear-gradient(135deg, #2d2d2d 0%, #555555 50%, #888888 100%);
 }
 
 .article-card__thumb-bg--3 {
-  background: linear-gradient(135deg, #f0eeeb 0%, #e0ddd8 50%, #c9c5bf 100%);
+  background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 50%, #b0b0b0 100%);
 }
 
 .article-card__title {
@@ -987,7 +987,7 @@ img {
 
 .back-to-top:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 4px 20px rgba(232, 93, 74, 0.15);
+  box-shadow: 0 4px 20px rgba(85, 85, 85, 0.15);
 }
 
 /* ============================================
