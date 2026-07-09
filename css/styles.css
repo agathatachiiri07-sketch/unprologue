@@ -1079,6 +1079,21 @@ img {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
+  .about__etymology {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about__plus {
+    transform: rotate(90deg);
+  }
+
+  .about__word {
+    width: 100%;
+    min-width: unset;
+    padding: 24px 32px;
+  }
+
   .message {
     grid-template-columns: 1fr;
     gap: 32px;
