@@ -4,25 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const backToTop = document.getElementById('backToTop');
   const fadeElements = document.querySelectorAll('.fade-in');
+  const blobs = document.querySelectorAll('.blob[data-parallax]');
 
   // Header scroll effect
-  let lastScroll = 0;
   window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
 
-    if (currentScroll > 60) {
-      header.classList.add('header--scrolled');
-    } else {
-      header.classList.remove('header--scrolled');
-    }
+    header.classList.toggle('header--scrolled', currentScroll > 40);
+    backToTop.classList.toggle('back-to-top--visible', currentScroll > 400);
 
-    if (currentScroll > 400) {
-      backToTop.classList.add('back-to-top--visible');
-    } else {
-      backToTop.classList.remove('back-to-top--visible');
-    }
-
-    lastScroll = currentScroll;
+    // Blob parallax
+    blobs.forEach(blob => {
+      const speed = parseFloat(blob.dataset.parallax) || 0.03;
+      blob.style.transform = `translateY(${currentScroll * speed}px)`;
+    });
   }, { passive: true });
 
   // Mobile menu toggle
@@ -32,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = nav.classList.contains('header__nav--open') ? 'hidden' : '';
   });
 
-  // Close menu on nav link click
   nav.querySelectorAll('.header__nav-link').forEach(link => {
     link.addEventListener('click', () => {
       menuBtn.classList.remove('header__menu-btn--active');
@@ -41,18 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Back to top
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Intersection Observer for fade-in animations
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -60px 0px',
-    threshold: 0.1
-  };
-
+  // Fade-in on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -60,23 +47,26 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
 
   fadeElements.forEach(el => observer.observe(el));
 
-  // Stagger animation for service cards
-  const serviceCards = document.querySelectorAll('.service-card.fade-in');
-  serviceCards.forEach((card, index) => {
-    card.style.transitionDelay = `${index * 0.08}s`;
+  // Trigger hero fade immediately
+  const heroContent = document.querySelector('.hero__content.fade-in');
+  if (heroContent) {
+    requestAnimationFrame(() => heroContent.classList.add('fade-in--visible'));
+  }
+
+  // Stagger animations
+  document.querySelectorAll('.service-card.fade-in').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.07}s`;
   });
 
-  // Stagger animation for news items
-  const newsItems = document.querySelectorAll('.news-item.fade-in');
-  newsItems.forEach((item, index) => {
-    item.style.transitionDelay = `${index * 0.1}s`;
+  document.querySelectorAll('.news-item.fade-in').forEach((item, i) => {
+    item.style.transitionDelay = `${i * 0.08}s`;
   });
 
-  // Smooth scroll for anchor links
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const targetId = anchor.getAttribute('href');
@@ -85,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 72;
+        const offset = 100;
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: 'smooth' });
       }

@@ -12,11 +12,20 @@
 </head>
 <body>
 
+  <!-- Ambient background blobs -->
+  <div class="blobs" aria-hidden="true">
+    <div class="blob blob--rose" data-parallax="0.03"></div>
+    <div class="blob blob--green" data-parallax="0.05"></div>
+    <div class="blob blob--grey" data-parallax="0.02"></div>
+  </div>
+
   <!-- Header -->
   <header class="header" id="header">
-    <div class="header__inner">
+    <div class="header__pill">
       <a href="index.html" class="header__logo">
-        <span class="header__logo-mark">U</span>
+        <span class="header__logo-icon" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
         <span class="header__logo-text">UNPROLOGUE</span>
       </a>
       <nav class="header__nav" id="nav">
@@ -38,11 +47,7 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="hero__bg">
-      <div class="hero__gradient"></div>
-      <div class="hero__grid"></div>
-    </div>
-    <div class="hero__content">
+    <div class="hero__content glass-panel fade-in">
       <p class="hero__label">Company</p>
       <h1 class="hero__title">
         <span class="hero__title-ja">会社概要</span>
@@ -68,7 +73,7 @@
           <span class="section__title-en">About</span>
         </h2>
       </div>
-      <div class="about fade-in">
+      <div class="about glass-panel fade-in">
         <div class="about__etymology">
           <div class="about__word">
             <span class="about__word-text">UN</span>
@@ -104,7 +109,7 @@
           <span class="section__title-en">Message from CEO</span>
         </h2>
       </div>
-      <div class="message fade-in">
+      <div class="message glass-panel fade-in">
         <div class="message__visual">
           <div class="message__photo">
             <div class="message__photo-placeholder">
@@ -256,7 +261,7 @@
   <!-- Recruit -->
   <section class="section section--recruit" id="recruit">
     <div class="container">
-      <div class="recruit fade-in">
+      <div class="recruit glass-panel glass-panel--dark fade-in">
         <div class="recruit__content">
           <h2 class="section__title">
             <span class="section__title-ja">採用</span>
@@ -348,7 +353,7 @@
           <span class="section__title-en">Company</span>
         </h2>
       </div>
-      <dl class="company-table fade-in">
+      <dl class="company-table glass-panel fade-in">
         <div class="company-table__row">
           <dt>会社名</dt>
           <dd>UNPROLOGUE株式会社（UNPROLOGUE Inc.）</dd>
@@ -389,7 +394,7 @@
   <!-- Contact -->
   <section class="section section--contact" id="contact">
     <div class="container">
-      <div class="contact fade-in">
+      <div class="contact glass-panel fade-in">
         <h2 class="contact__title">
           <span class="contact__title-ja">お問い合わせ</span>
           <span class="contact__title-en">Contact</span>
@@ -404,7 +409,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer glass-panel glass-panel--footer">
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
