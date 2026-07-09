@@ -1,1 +1,19 @@
+# UNPROLOGUE Corporate Website
 
+Corporate website for UNPROLOGUE株式会社, inspired by [mederi.jp/company/](https://www.mederi.jp/company/).
+
+## Quick Start
+
+Serve locally with any static file server:
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open http://localhost:8080
+
+## Structure
+
+- `index.html` — Company overview page
+- `css/styles.css` — Styles
+- `js/main.js` — Scroll animations, mobile menu, interactions
