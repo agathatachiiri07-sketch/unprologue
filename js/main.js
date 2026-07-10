@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
   fadeElements.forEach(el => observer.observe(el));
 
   // Trigger hero fade immediately
-  const heroContent = document.querySelector('.hero__content.fade-in');
-  if (heroContent) {
-    requestAnimationFrame(() => heroContent.classList.add('fade-in--visible'));
+  const heroTitle = document.querySelector('.hero__title.fade-in');
+  if (heroTitle) {
+    requestAnimationFrame(() => heroTitle.classList.add('fade-in--visible'));
   }
 
   // Stagger animations
