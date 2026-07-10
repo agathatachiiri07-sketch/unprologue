@@ -473,6 +473,13 @@ img {
   text-align: center;
 }
 
+.about__intro {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  line-height: 2.2;
+  margin-bottom: 12px;
+}
+
 .about__lead {
   font-size: clamp(1rem, 2.2vw, 1.15rem);
   font-weight: 500;
