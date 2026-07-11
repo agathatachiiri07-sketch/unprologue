@@ -28,7 +28,7 @@
       </a>
       <nav class="header__nav" id="nav">
         <a href="#about" class="header__nav-link">About</a>
-        <a href="#profile" class="header__nav-link">Profile</a>
+        <a href="#members" class="header__nav-link">Members</a>
         <a href="#service" class="header__nav-link">Services</a>
         <a href="#recruit" class="header__nav-link">Recruit</a>
         <a href="#news" class="header__nav-link">News</a>
@@ -103,70 +103,107 @@
     </div>
   </section>
 
-  <!-- Representative Profile -->
-  <section class="section section--message" id="profile">
+  <!-- Members -->
+  <section class="section section--members" id="members">
     <div class="container">
       <div class="section__header fade-in">
         <h2 class="section__title">
-          <span class="section__title-ja">代表プロフィール</span>
-          <span class="section__title-en">Profile</span>
+          <span class="section__title-ja">メンバー</span>
+          <span class="section__title-en">Members</span>
         </h2>
       </div>
-      <div class="message glass-panel fade-in">
-        <div class="message__visual">
-          <div class="message__photo">
-            <div class="message__photo-placeholder">
-              <span class="message__photo-initial">K</span>
+
+      <div class="members">
+        <article class="member glass-panel fade-in">
+          <button class="member__toggle" type="button" aria-expanded="false" aria-controls="member-yuria">
+            <div class="member__summary">
+              <div class="member__avatar">
+                <span class="member__avatar-initial">K</span>
+              </div>
+              <div class="member__intro">
+                <p class="member__role">代表取締役</p>
+                <h3 class="member__name-ja">梶山 悠莉彩</h3>
+                <p class="member__name-en">Yuria Kajiyama</p>
+                <p class="member__preview">日本文化への深い理解 × Z世代マーケティングの知見</p>
+              </div>
+              <span class="member__icon" aria-hidden="true"></span>
+            </div>
+          </button>
+          <div class="member__details" id="member-yuria" aria-hidden="true">
+            <div class="member__content">
+              <p class="member__meta">1998.5.8 / 静岡県</p>
+              <p class="member__tagline">日本文化への深い理解 × Z世代マーケティングの知見</p>
+              <div class="member__bio">
+                <p>4歳から茶道、國學院大学で日本文化を専攻、着物免許師範を取得。</p>
+                <p>伝統文化の素養に加え、Z世代マーケターとしての実績を掛け合わせた事業開発を強みとする。</p>
+              </div>
+              <div class="member__career">
+                <h4 class="member__career-heading">Career Highlights</h4>
+                <ol class="member__timeline">
+                  <li class="member__timeline-item">
+                    <span class="member__year">2018</span>
+                    <p>Z世代向けマーケティング事業を立ち上げ</p>
+                  </li>
+                  <li class="member__timeline-item">
+                    <span class="member__year">2019</span>
+                    <p>第10回渋谷区長への政策提言 区長賞 受賞</p>
+                  </li>
+                  <li class="member__timeline-item">
+                    <span class="member__year">2020</span>
+                    <p>博報堂Z総研賞 受賞 / 静岡県袋井市観光特使 就任</p>
+                  </li>
+                  <li class="member__timeline-item">
+                    <span class="member__year">2021</span>
+                    <p>ミス國學院2021選出 / UX新潟テレビニュースキャスター</p>
+                  </li>
+                  <li class="member__timeline-item">
+                    <span class="member__year">2022</span>
+                    <p>老舗菓子メーカー入社・地上波コメンテーター開始</p>
+                  </li>
+                  <li class="member__timeline-item member__timeline-item--current">
+                    <span class="member__year">現在</span>
+                    <p>SNS総フォロワー約8万人。商品開発・イベント運営に幅広く従事</p>
+                  </li>
+                </ol>
+              </div>
             </div>
           </div>
-          <div class="message__info">
-            <p class="message__role">代表取締役</p>
-            <p class="message__name-ja">梶山 悠莉彩</p>
-            <p class="message__name-en">Yuria Kajiyama</p>
-            <p class="message__meta">1998.5.8 / 静岡県</p>
-          </div>
-        </div>
-        <div class="message__body">
-          <p class="message__tagline">
-            日本文化への深い理解 × Z世代マーケティングの知見
-          </p>
-          <p>
-            4歳から茶道、國學院大学で日本文化を専攻、着物免許師範を取得。
-          </p>
-          <p>
-            伝統文化の素養に加え、Z世代マーケターとしての実績を掛け合わせた事業開発を強みとする。
-          </p>
-        </div>
-      </div>
+        </article>
 
-      <div class="career glass-panel fade-in">
-        <h3 class="career__heading">Career Highlights</h3>
-        <ol class="career__timeline">
-          <li class="career__item">
-            <span class="career__year">2018</span>
-            <p class="career__text">Z世代向けマーケティング事業を立ち上げ</p>
-          </li>
-          <li class="career__item">
-            <span class="career__year">2019</span>
-            <p class="career__text">第10回渋谷区長への政策提言 区長賞 受賞</p>
-          </li>
-          <li class="career__item">
-            <span class="career__year">2020</span>
-            <p class="career__text">博報堂Z総研賞 受賞 / 静岡県袋井市観光特使 就任</p>
-          </li>
-          <li class="career__item">
-            <span class="career__year">2021</span>
-            <p class="career__text">ミス國學院2021選出 / UX新潟テレビニュースキャスター</p>
-          </li>
-          <li class="career__item">
-            <span class="career__year">2022</span>
-            <p class="career__text">老舗菓子メーカー入社・地上波コメンテーター開始</p>
-          </li>
-          <li class="career__item career__item--current">
-            <span class="career__year">現在</span>
-            <p class="career__text">SNS総フォロワー約8万人。商品開発・イベント運営に幅広く従事</p>
-          </li>
-        </ol>
+        <article class="member glass-panel fade-in">
+          <button class="member__toggle" type="button" aria-expanded="false" aria-controls="member-agatha">
+            <div class="member__summary">
+              <div class="member__avatar">
+                <span class="member__avatar-initial">A</span>
+              </div>
+              <div class="member__intro">
+                <p class="member__role">クリエイティブディレクター</p>
+                <h3 class="member__name-ja">立入 天花咲</h3>
+                <p class="member__name-en">Agatha Tachiiri</p>
+                <p class="member__preview">ブランドの物語を、体験として届けるクリエイティブディレクション</p>
+              </div>
+              <span class="member__icon" aria-hidden="true"></span>
+            </div>
+          </button>
+          <div class="member__details" id="member-agatha" hidden>
+            <div class="member__content">
+              <p class="member__tagline">ブランドの物語を、体験として届けるクリエイティブディレクション</p>
+              <div class="member__bio">
+                <p>ビジュアルアイデンティティからコミュニケーション設計まで、ブランドの「プロローグ」を形にするクリエイティブを統括。</p>
+                <p>日本の美意識と現代的な表現を融合させ、記憶に残るブランド体験の設計を得意とする。</p>
+              </div>
+              <div class="member__career">
+                <h4 class="member__career-heading">Role & Focus</h4>
+                <ol class="member__timeline">
+                  <li class="member__timeline-item member__timeline-item--current">
+                    <span class="member__year">現在</span>
+                    <p>UNPROLOGUEのクリエイティブディレクション、ブランド戦略、ビジュアルデザインを担当</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -441,7 +478,7 @@
         </div>
         <nav class="footer__nav">
           <a href="#about">About</a>
-          <a href="#profile">Profile</a>
+          <a href="#members">Members</a>
           <a href="#service">Services</a>
           <a href="#recruit">Recruit</a>
           <a href="#news">News</a>

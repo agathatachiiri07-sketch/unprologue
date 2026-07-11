@@ -57,7 +57,34 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => heroTitle.classList.add('fade-in--visible'));
   }
 
+  // Member accordion
+  document.querySelectorAll('.member__toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const member = toggle.closest('.member');
+      const details = member.querySelector('.member__details');
+      const isOpen = member.classList.contains('is-open');
+
+      document.querySelectorAll('.member.is-open').forEach(openMember => {
+        if (openMember !== member) {
+          openMember.classList.remove('is-open');
+          const openToggle = openMember.querySelector('.member__toggle');
+          const openDetails = openMember.querySelector('.member__details');
+          openToggle.setAttribute('aria-expanded', 'false');
+          openDetails.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      member.classList.toggle('is-open', !isOpen);
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      details.setAttribute('aria-hidden', String(isOpen));
+    });
+  });
+
   // Stagger animations
+  document.querySelectorAll('.member.fade-in').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
+
   document.querySelectorAll('.service-card.fade-in').forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.07}s`;
   });
