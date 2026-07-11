@@ -629,6 +629,97 @@ img {
 }
 
 /* ============================================
+   Career Highlights
+   ============================================ */
+.career {
+  margin-top: 24px;
+  padding: 40px 48px;
+}
+
+.career__heading {
+  font-family: var(--font-en);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.career__timeline {
+  list-style: none;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.career__item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 24px;
+  padding-bottom: 28px;
+  position: relative;
+}
+
+.career__item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 35px;
+  top: 12px;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-border-subtle);
+}
+
+.career__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 31px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.career__item--current::after {
+  content: '';
+  position: absolute;
+  left: 31px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent-dark);
+}
+
+.career__year {
+  font-family: var(--font-en);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text-light);
+  padding-top: 2px;
+}
+
+.career__item--current .career__year {
+  color: var(--color-text);
+}
+
+.career__text {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--color-text);
+  padding-top: 0;
+}
+
+.career__item:last-child {
+  padding-bottom: 0;
+}
+
+/* ============================================
    Services
    ============================================ */
 .services {
@@ -1282,6 +1373,24 @@ img {
     grid-template-columns: 1fr;
     gap: 28px;
     padding: 28px 24px;
+  }
+
+  .career {
+    padding: 28px 24px;
+  }
+
+  .career__item {
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+  }
+
+  .career__item:not(:last-child)::before {
+    left: 27px;
+  }
+
+  .career__item:not(:last-child)::after,
+  .career__item--current::after {
+    left: 23px;
   }
 
   .message__visual {
