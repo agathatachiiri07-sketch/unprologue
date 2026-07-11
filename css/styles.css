@@ -403,7 +403,6 @@ img {
 }
 
 .section--about,
-.section--members,
 .section--service,
 .section--news,
 .section--company,
@@ -542,9 +541,10 @@ img {
    Members
    ============================================ */
 .members {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  margin-top: 24px;
 }
 
 .member {
@@ -605,10 +605,18 @@ img {
   margin-bottom: 4px;
 }
 
+.member__names {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
 .member__name-ja {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 2px;
+  margin: 0;
 }
 
 .member__name-en {
@@ -616,7 +624,7 @@ img {
   font-size: 0.8rem;
   color: var(--color-text-light);
   letter-spacing: 0.04em;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .member__preview {
@@ -1440,6 +1448,10 @@ img {
   .about__word {
     width: 100%;
     min-width: unset;
+  }
+
+  .members {
+    grid-template-columns: 1fr;
   }
 
   .member__summary {

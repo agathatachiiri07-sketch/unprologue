@@ -28,7 +28,6 @@
       </a>
       <nav class="header__nav" id="nav">
         <a href="#about" class="header__nav-link">About</a>
-        <a href="#members" class="header__nav-link">Members</a>
         <a href="#service" class="header__nav-link">Services</a>
         <a href="#recruit" class="header__nav-link">Recruit</a>
         <a href="#news" class="header__nav-link">News</a>
@@ -100,18 +99,6 @@
           </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Members -->
-  <section class="section section--members" id="members">
-    <div class="container">
-      <div class="section__header fade-in">
-        <h2 class="section__title">
-          <span class="section__title-ja">メンバー</span>
-          <span class="section__title-en">Members</span>
-        </h2>
-      </div>
 
       <div class="members">
         <article class="member glass-panel fade-in">
@@ -122,8 +109,10 @@
               </div>
               <div class="member__intro">
                 <p class="member__role">代表取締役</p>
-                <h3 class="member__name-ja">梶山 悠莉彩</h3>
-                <p class="member__name-en">Yuria Kajiyama</p>
+                <div class="member__names">
+                  <h3 class="member__name-ja">梶山 悠莉彩</h3>
+                  <p class="member__name-en">Yuria Kajiyama</p>
+                </div>
                 <p class="member__preview">日本文化への深い理解 × Z世代マーケティングの知見</p>
               </div>
               <span class="member__icon" aria-hidden="true"></span>
@@ -178,14 +167,16 @@
               </div>
               <div class="member__intro">
                 <p class="member__role">クリエイティブディレクター</p>
-                <h3 class="member__name-ja">立入 天花咲</h3>
-                <p class="member__name-en">Agatha Tachiiri</p>
+                <div class="member__names">
+                  <h3 class="member__name-ja">立入 天花咲</h3>
+                  <p class="member__name-en">Agatha Tachiiri</p>
+                </div>
                 <p class="member__preview">ブランドの物語を、体験として届けるクリエイティブディレクション</p>
               </div>
               <span class="member__icon" aria-hidden="true"></span>
             </div>
           </button>
-          <div class="member__details" id="member-agatha" hidden>
+          <div class="member__details" id="member-agatha" aria-hidden="true">
             <div class="member__content">
               <p class="member__tagline">ブランドの物語を、体験として届けるクリエイティブディレクション</p>
               <div class="member__bio">
@@ -478,7 +469,6 @@
         </div>
         <nav class="footer__nav">
           <a href="#about">About</a>
-          <a href="#members">Members</a>
           <a href="#service">Services</a>
           <a href="#recruit">Recruit</a>
           <a href="#news">News</a>
