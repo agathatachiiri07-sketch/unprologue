@@ -12,6 +12,33 @@ python3 -m http.server 8080
 
 Then open http://localhost:8080
 
+## Custom Domain (unprologue.jp)
+
+This site is configured for GitHub Pages with the custom domain `unprologue.jp`.
+
+### 1. Enable GitHub Pages
+
+In the repository: **Settings → Pages**
+
+- **Source:** Deploy from a branch
+- **Branch:** `main` / `/ (root)`
+- **Custom domain:** `unprologue.jp`
+- After DNS propagates, enable **Enforce HTTPS**
+
+### 2. Update DNS (GoDaddy)
+
+The domain uses GoDaddy nameservers. Replace the current parking records with:
+
+| Type  | Host | Value |
+|-------|------|-------|
+| A     | @    | `185.199.108.153` |
+| A     | @    | `185.199.109.153` |
+| A     | @    | `185.199.110.153` |
+| A     | @    | `185.199.111.153` |
+| CNAME | www  | `agathatachiiri07-sketch.github.io` |
+
+DNS changes can take up to 48 hours to propagate (often much faster).
+
 ## Structure
 
 - `index.html` — Company overview page
