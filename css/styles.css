@@ -542,9 +542,10 @@ img {
    ============================================ */
 .members {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  margin-top: 48px;
+  grid-template-columns: repeat(2, minmax(0, 200px));
+  justify-content: center;
+  gap: 20px;
+  margin-top: 32px;
 }
 
 .member {
@@ -568,11 +569,12 @@ img {
 
 .member__visual {
   position: relative;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .member__photo {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
+  max-height: 180px;
   background: #e6e6e6;
   display: flex;
   align-items: center;
@@ -582,7 +584,7 @@ img {
 
 .member__photo-initial {
   font-family: var(--font-en);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   color: rgba(0, 0, 0, 0.12);
@@ -591,17 +593,17 @@ img {
 .member__name-block {
   position: absolute;
   left: 0;
-  bottom: -8px;
+  bottom: -6px;
   background: var(--color-white);
-  padding: 14px 20px 12px;
-  min-width: min(75%, 220px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 8px 12px 6px;
+  min-width: min(85%, 150px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .member__name-line {
   display: block;
   font-family: var(--font-en);
-  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
@@ -612,13 +614,13 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 10px;
   padding-left: 2px;
 }
 
 .member__role {
   font-family: var(--font-en);
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -628,7 +630,7 @@ img {
 
 .member__arrow {
   font-family: var(--font-en);
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 300;
   line-height: 1;
   color: var(--color-text);
@@ -655,29 +657,29 @@ img {
 }
 
 .member__content {
-  padding: 24px 0 8px;
+  padding: 16px 0 4px;
   border-top: 1px solid var(--color-border-subtle);
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 .member__meta {
   font-family: var(--font-en);
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   color: var(--color-text-muted);
   letter-spacing: 0.04em;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .member__tagline {
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  margin-bottom: 14px;
 }
 
 .member__bio p {
-  font-size: 0.9rem;
-  line-height: 1.9;
+  font-size: 0.78rem;
+  line-height: 1.75;
   color: var(--color-text-light);
   margin-bottom: 12px;
 }
@@ -1413,13 +1415,21 @@ img {
   }
 
   .members {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(2, minmax(0, 160px));
+    gap: 16px;
+  }
+
+  .member__photo {
+    max-height: 150px;
   }
 
   .member__name-block {
-    min-width: min(80%, 200px);
-    padding: 12px 16px 10px;
+    min-width: min(90%, 130px);
+    padding: 6px 10px 5px;
+  }
+
+  .member__name-line {
+    font-size: 0.92rem;
   }
 
   .services {
