@@ -85,8 +85,21 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.transitionDelay = `${i * 0.1}s`;
   });
 
-  document.querySelectorAll('.service-card.fade-in').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.07}s`;
+  document.querySelectorAll('.service-panel').forEach((panel, i) => {
+    const parent = panel.closest('.service-panels');
+    if (parent) {
+      panel.style.transitionDelay = `${i * 0.05}s`;
+    }
+
+    panel.addEventListener('click', () => {
+      if (!window.matchMedia('(hover: hover)').matches) {
+        const isActive = panel.classList.contains('is-active');
+        parent.querySelectorAll('.service-panel.is-active').forEach(activePanel => {
+          activePanel.classList.remove('is-active');
+        });
+        if (!isActive) panel.classList.add('is-active');
+      }
+    });
   });
 
   document.querySelectorAll('.news-item.fade-in').forEach((item, i) => {
