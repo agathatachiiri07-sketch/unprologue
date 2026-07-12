@@ -305,7 +305,7 @@ img {
   top: 10%;
   right: -8%;
   background: rgba(196, 164, 164, 0.22);
-  animation: heroOrbDrift1 14s ease-in-out infinite;
+  animation: heroOrbDrift1 12s ease-in-out infinite;
 }
 
 .hero__orb--2 {
@@ -316,7 +316,18 @@ img {
   bottom: 5%;
   left: -6%;
   background: rgba(164, 180, 164, 0.18);
-  animation: heroOrbDrift2 18s ease-in-out infinite;
+  animation: heroOrbDrift2 16s ease-in-out infinite;
+}
+
+.hero__orb--3 {
+  width: 32vw;
+  height: 32vw;
+  max-width: 320px;
+  max-height: 320px;
+  top: 42%;
+  left: 55%;
+  background: rgba(180, 180, 180, 0.2);
+  animation: heroOrbDrift3 20s ease-in-out infinite;
 }
 
 .hero__shape {
@@ -331,28 +342,41 @@ img {
     radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.7) 0%, transparent 55%),
     radial-gradient(circle at 65% 65%, rgba(200, 200, 200, 0.35) 0%, transparent 50%),
     linear-gradient(145deg, rgba(220, 220, 220, 0.5) 0%, rgba(180, 180, 180, 0.25) 100%);
+  background-size: 100% 100%, 100% 100%, 200% 200%;
   border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow:
     inset 0 0 80px rgba(255, 255, 255, 0.35),
     0 24px 80px rgba(0, 0, 0, 0.06);
   opacity: 0.85;
-  animation: heroShapeFloat 10s ease-in-out infinite;
-  transition: transform 0.15s ease-out;
+  animation: heroShapeFloat 14s ease-in-out infinite, heroShapeGlow 10s ease-in-out infinite;
 }
 
 @keyframes heroOrbDrift1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-24px, 18px) scale(1.04); }
+  33% { transform: translate(-36px, 28px) scale(1.06); }
+  66% { transform: translate(18px, -20px) scale(0.96); }
 }
 
 @keyframes heroOrbDrift2 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(20px, -16px) scale(1.03); }
+  33% { transform: translate(32px, -24px) scale(1.05); }
+  66% { transform: translate(-20px, 16px) scale(0.97); }
+}
+
+@keyframes heroOrbDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-28px, -32px) scale(1.08); }
 }
 
 @keyframes heroShapeFloat {
-  0%, 100% { transform: translate(-42%, -50%) rotate(0deg); }
-  50% { transform: translate(-42%, -52%) rotate(2deg); }
+  0%, 100% { transform: translate(-42%, -50%) rotate(0deg) scale(1); }
+  33% { transform: translate(-40%, -48%) rotate(4deg) scale(1.03); }
+  66% { transform: translate(-44%, -52%) rotate(-3deg) scale(0.98); }
+}
+
+@keyframes heroShapeGlow {
+  0%, 100% { background-position: 0% 0%, 0% 0%, 0% 50%; }
+  50% { background-position: 0% 0%, 0% 0%, 100% 50%; }
 }
 
 .hero__inner {
@@ -364,35 +388,18 @@ img {
   text-align: center;
 }
 
-.hero__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-}
-
-.hero__eyebrow {
-  font-family: var(--font-en);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: var(--letter-label);
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
 .hero__title {
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .hero__logo {
   display: block;
   width: min(72vw, 480px);
   height: auto;
-  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.06));
 }
 
 .hero__title-sub {
@@ -402,43 +409,7 @@ img {
   letter-spacing: 0.42em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-}
-
-.hero__tagline {
-  max-width: 560px;
-  font-size: clamp(0.88rem, 2vw, 1rem);
-  line-height: 2;
-  color: var(--color-text-light);
-  letter-spacing: 0.02em;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-}
-
-.hero__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.hero__chip {
-  font-family: var(--font-en);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: var(--radius-pill);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  margin-top: 14px;
 }
 
 .hero__scroll {
