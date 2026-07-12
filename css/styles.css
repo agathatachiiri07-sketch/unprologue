@@ -18,8 +18,8 @@
   --color-rose: rgba(196, 164, 164, 0.45);
   --color-green: rgba(100, 140, 120, 0.5);
 
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-bg-strong: rgba(255, 255, 255, 0.18);
+  --glass-bg: rgba(255, 255, 255, 0.22);
+  --glass-bg-strong: rgba(255, 255, 255, 0.32);
   --glass-border: rgba(255, 255, 255, 0.38);
   --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.35);
   --glass-blur: blur(28px) saturate(165%);
@@ -53,7 +53,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background: #9aa09c;
+  background: #d8dbd9;
 }
 
 body {
@@ -89,8 +89,8 @@ body::before {
   pointer-events: none;
   overflow: hidden;
   background:
-    linear-gradient(125deg, #4a4f4c 0%, #7a807c 22%, #a8adaa 48%, #d4d8d5 72%, #f0f2f1 100%),
-    linear-gradient(305deg, #2e3130 0%, #5c615e 35%, #949994 65%, #c9cdc9 100%);
+    linear-gradient(125deg, #c2c7c4 0%, #d4d8d5 24%, #e4e7e5 52%, #eef0ef 76%, #f7f8f7 100%),
+    linear-gradient(305deg, #b0b5b2 0%, #c8ccc9 38%, #dce0dd 68%, #f0f2f1 100%);
   background-size: 320% 320%, 280% 280%;
   animation: meshGradientShift 10s ease-in-out infinite;
 }
@@ -98,9 +98,9 @@ body::before {
 .mesh-bg__blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(52px);
+  filter: blur(56px);
   will-change: transform;
-  opacity: 1;
+  opacity: 0.75;
   mix-blend-mode: normal;
 }
 
@@ -109,7 +109,7 @@ body::before {
   height: min(95vmax, 1200px);
   top: -28%;
   left: -22%;
-  background: radial-gradient(circle, #3a3d3b 0%, #5c605d 35%, rgba(120, 125, 122, 0.45) 55%, transparent 72%);
+  background: radial-gradient(circle, #b8bdba 0%, #cdd1ce 38%, rgba(210, 214, 211, 0.45) 58%, transparent 74%);
   animation: meshDrift1 11s ease-in-out infinite;
 }
 
@@ -118,7 +118,7 @@ body::before {
   height: min(90vmax, 1100px);
   bottom: -32%;
   right: -24%;
-  background: radial-gradient(circle, #ffffff 0%, #e4e7e5 38%, rgba(180, 185, 182, 0.5) 58%, transparent 74%);
+  background: radial-gradient(circle, #ffffff 0%, #f2f4f3 42%, rgba(228, 231, 229, 0.55) 62%, transparent 76%);
   animation: meshDrift2 14s ease-in-out infinite;
 }
 
@@ -127,7 +127,7 @@ body::before {
   height: min(65vmax, 780px);
   top: 28%;
   right: -8%;
-  background: radial-gradient(circle, #6b706d 0%, #8f9491 38%, rgba(160, 165, 162, 0.4) 60%, transparent 72%);
+  background: radial-gradient(circle, #c5cac7 0%, #d8dbd9 40%, rgba(220, 224, 221, 0.4) 62%, transparent 74%);
   animation: meshDrift3 9s ease-in-out infinite;
 }
 
