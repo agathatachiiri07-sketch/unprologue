@@ -1676,6 +1676,12 @@ img {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+/* Show content if JavaScript fails to load */
+html:not(.js-enabled) .fade-in {
+  opacity: 1;
+  transform: none;
+}
+
 .fade-in--visible {
   opacity: 1;
   transform: translateY(0);

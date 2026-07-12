@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const backToTop = document.getElementById('backToTop');
   const fadeElements = document.querySelectorAll('.fade-in');
-  const fadeElements = document.querySelectorAll('.fade-in');
 
   // Header scroll effect
   window.addEventListener('scroll', () => {
