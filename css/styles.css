@@ -2112,3 +2112,10 @@ img {
   .blob--green { width: 240px; height: 240px; }
   .blob--grey { width: 300px; height: 300px; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__bubble,
+  .hero__shape {
+    animation: none !important;
+  }
+}
