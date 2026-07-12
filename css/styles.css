@@ -1894,8 +1894,13 @@ img {
   .hero__shape {
     width: min(85vw, 420px);
     height: min(85vw, 420px);
-    transform: translate(-50%, -45%);
     opacity: 0.6;
+    animation-name: heroShapeFloatMobile;
+  }
+
+  @keyframes heroShapeFloatMobile {
+    0%, 100% { transform: translate(-50%, -45%) rotate(0deg); }
+    50% { transform: translate(-50%, -47%) rotate(2deg); }
   }
 
   .hero__scroll {
