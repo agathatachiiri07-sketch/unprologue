@@ -1132,10 +1132,14 @@ img {
   margin-bottom: 14px;
 }
 
+.article-card__thumb:has(.article-card__img) {
+  aspect-ratio: auto;
+  background: var(--color-bg-alt);
+}
+
 .article-card__img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
@@ -1251,8 +1255,6 @@ img {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
 }
 
 .article-post__body {
