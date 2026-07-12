@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const backToTop = document.getElementById('backToTop');
   const fadeElements = document.querySelectorAll('.fade-in');
-  const blobs = document.querySelectorAll('.blob[data-parallax]');
+  const fadeElements = document.querySelectorAll('.fade-in');
 
   // Header scroll effect
   window.addEventListener('scroll', () => {
@@ -12,12 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     header.classList.toggle('header--scrolled', currentScroll > 40);
     backToTop.classList.toggle('back-to-top--visible', currentScroll > 400);
-
-    // Blob parallax
-    blobs.forEach(blob => {
-      const speed = parseFloat(blob.dataset.parallax) || 0.03;
-      blob.style.transform = `translateY(${currentScroll * speed}px)`;
-    });
   }, { passive: true });
 
   // Mobile menu toggle
