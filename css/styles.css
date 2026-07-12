@@ -1886,17 +1886,10 @@ img {
     animation-name: heroShapeFloatMobile;
   }
 
-  .hero__bubble--5,
-  .hero__bubble--7,
-  .hero__bubble--8 {
-    display: none;
-  }
-
-  .hero__bubble--1 { width: 64px; height: 64px; }
-  .hero__bubble--2 { width: 40px; height: 40px; }
-  .hero__bubble--3 { width: 80px; height: 80px; }
-  .hero__bubble--4 { width: 32px; height: 32px; }
-  .hero__bubble--6 { width: 28px; height: 28px; }
+  .hero__bubble--1 { width: 120px; height: 120px; }
+  .hero__bubble--2 { width: 100px; height: 100px; }
+  .hero__bubble--3 { width: 140px; height: 140px; }
+  .hero__bubble--4 { width: 96px; height: 96px; }
 
   @keyframes heroShapeFloatMobile {
     0%, 100% { transform: translate(-50%, -45%) rotate(0deg); }
