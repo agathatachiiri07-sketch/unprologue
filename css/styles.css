@@ -18,8 +18,8 @@
   --color-rose: rgba(196, 164, 164, 0.45);
   --color-green: rgba(100, 140, 120, 0.5);
 
-  --glass-bg: rgba(255, 255, 255, 0.14);
-  --glass-bg-strong: rgba(255, 255, 255, 0.24);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-bg-strong: rgba(255, 255, 255, 0.18);
   --glass-border: rgba(255, 255, 255, 0.38);
   --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.35);
   --glass-blur: blur(28px) saturate(165%);
@@ -53,17 +53,20 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  background: #7a8680;
 }
 
 body {
   font-family: var(--font-display);
   color: var(--color-text);
-  background: #9aa39e;
+  background: transparent;
   line-height: 1.7;
   letter-spacing: var(--letter-tight);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
 }
 
 body::before {
@@ -83,57 +86,67 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
   overflow: hidden;
-  background: linear-gradient(145deg, #8f9893 0%, #c5cac7 45%, #a8b0ab 100%);
+  background: linear-gradient(125deg, #1f4d3a 0%, #3d7a62 22%, #8fa89a 55%, #d8dedb 78%, #f2f4f3 100%);
+  background-size: 240% 240%;
+  animation: meshGradientShift 12s ease-in-out infinite;
 }
 
 .mesh-bg__blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(48px);
   will-change: transform;
+  opacity: 1;
+  mix-blend-mode: normal;
 }
 
 .mesh-bg__blob--green {
-  width: min(75vmax, 900px);
-  height: min(75vmax, 900px);
-  top: -18%;
-  left: -12%;
-  background: radial-gradient(circle, rgba(55, 110, 88, 0.85) 0%, rgba(55, 110, 88, 0.35) 55%, transparent 72%);
-  animation: meshDrift1 24s ease-in-out infinite;
+  width: min(95vmax, 1200px);
+  height: min(95vmax, 1200px);
+  top: -28%;
+  left: -22%;
+  background: radial-gradient(circle, #1a4a38 0%, #2d6b52 35%, rgba(61, 122, 98, 0.4) 55%, transparent 72%);
+  animation: meshDrift1 10s ease-in-out infinite;
 }
 
 .mesh-bg__blob--grey {
-  width: min(70vmax, 820px);
-  height: min(70vmax, 820px);
-  bottom: -20%;
-  right: -14%;
-  background: radial-gradient(circle, rgba(200, 206, 202, 0.95) 0%, rgba(170, 178, 174, 0.45) 55%, transparent 72%);
-  animation: meshDrift2 28s ease-in-out infinite;
+  width: min(90vmax, 1100px);
+  height: min(90vmax, 1100px);
+  bottom: -32%;
+  right: -24%;
+  background: radial-gradient(circle, #ffffff 0%, #dde3df 40%, rgba(180, 190, 184, 0.45) 58%, transparent 74%);
+  animation: meshDrift2 13s ease-in-out infinite;
 }
 
 .mesh-bg__blob--mint {
-  width: min(50vmax, 600px);
-  height: min(50vmax, 600px);
-  top: 38%;
-  right: 8%;
-  background: radial-gradient(circle, rgba(90, 130, 108, 0.65) 0%, rgba(90, 130, 108, 0.2) 60%, transparent 75%);
-  animation: meshDrift3 20s ease-in-out infinite;
+  width: min(65vmax, 780px);
+  height: min(65vmax, 780px);
+  top: 28%;
+  right: -8%;
+  background: radial-gradient(circle, #3a8a6a 0%, #52a080 38%, rgba(82, 160, 128, 0.35) 60%, transparent 72%);
+  animation: meshDrift3 9s ease-in-out infinite;
+}
+
+@keyframes meshGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 @keyframes meshDrift1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(8vw, 6vh) scale(1.08); }
+  50% { transform: translate(14vw, 12vh) scale(1.15); }
 }
 
 @keyframes meshDrift2 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-7vw, -5vh) scale(1.06); }
+  50% { transform: translate(-12vw, -10vh) scale(1.12); }
 }
 
 @keyframes meshDrift3 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-5vw, 4vh) scale(0.94); }
+  50% { transform: translate(-10vw, 8vh) scale(0.88); }
 }
 
 a {
@@ -1932,6 +1945,7 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .mesh-bg,
   .mesh-bg__blob {
     animation: none !important;
   }
