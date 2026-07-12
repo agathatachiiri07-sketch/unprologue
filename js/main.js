@@ -51,10 +51,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach(el => observer.observe(el));
 
-  // Trigger hero fade immediately
-  const heroTitle = document.querySelector('.hero__title.fade-in');
-  if (heroTitle) {
-    requestAnimationFrame(() => heroTitle.classList.add('fade-in--visible'));
+  // Staggered hero entrance
+  const heroFades = document.querySelectorAll('.hero .fade-in');
+  heroFades.forEach((el, i) => {
+    el.style.transitionDelay = `${0.1 + i * 0.15}s`;
+    requestAnimationFrame(() => el.classList.add('fade-in--visible'));
+  });
+
+  // Subtle hero parallax on pointer move
+  const hero = document.getElementById('hero');
+  const heroShape = document.querySelector('.hero__shape');
+  if (hero && heroShape && window.matchMedia('(hover: hover)').matches) {
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      heroShape.style.transform = `translate(calc(-42% + ${x * 24}px), calc(-50% + ${y * 18}px)) rotate(${x * 2}deg)`;
+    });
+    hero.addEventListener('mouseleave', () => {
+      heroShape.style.transform = '';
+    });
   }
 
   // Member accordion
