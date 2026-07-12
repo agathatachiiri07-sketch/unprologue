@@ -102,10 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelectorAll('.news-item.fade-in').forEach((item, i) => {
-    item.style.transitionDelay = `${i * 0.08}s`;
-  });
-
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
