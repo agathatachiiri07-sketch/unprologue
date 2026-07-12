@@ -53,7 +53,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background: #7a8680;
+  background: #9aa09c;
 }
 
 body {
@@ -88,15 +88,17 @@ body::before {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background: linear-gradient(125deg, #1f4d3a 0%, #3d7a62 22%, #8fa89a 55%, #d8dedb 78%, #f2f4f3 100%);
-  background-size: 240% 240%;
-  animation: meshGradientShift 12s ease-in-out infinite;
+  background:
+    linear-gradient(125deg, #4a4f4c 0%, #7a807c 22%, #a8adaa 48%, #d4d8d5 72%, #f0f2f1 100%),
+    linear-gradient(305deg, #2e3130 0%, #5c615e 35%, #949994 65%, #c9cdc9 100%);
+  background-size: 320% 320%, 280% 280%;
+  animation: meshGradientShift 10s ease-in-out infinite;
 }
 
 .mesh-bg__blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(48px);
+  filter: blur(52px);
   will-change: transform;
   opacity: 1;
   mix-blend-mode: normal;
@@ -107,8 +109,8 @@ body::before {
   height: min(95vmax, 1200px);
   top: -28%;
   left: -22%;
-  background: radial-gradient(circle, #1a4a38 0%, #2d6b52 35%, rgba(61, 122, 98, 0.4) 55%, transparent 72%);
-  animation: meshDrift1 10s ease-in-out infinite;
+  background: radial-gradient(circle, #3a3d3b 0%, #5c605d 35%, rgba(120, 125, 122, 0.45) 55%, transparent 72%);
+  animation: meshDrift1 11s ease-in-out infinite;
 }
 
 .mesh-bg__blob--grey {
@@ -116,8 +118,8 @@ body::before {
   height: min(90vmax, 1100px);
   bottom: -32%;
   right: -24%;
-  background: radial-gradient(circle, #ffffff 0%, #dde3df 40%, rgba(180, 190, 184, 0.45) 58%, transparent 74%);
-  animation: meshDrift2 13s ease-in-out infinite;
+  background: radial-gradient(circle, #ffffff 0%, #e4e7e5 38%, rgba(180, 185, 182, 0.5) 58%, transparent 74%);
+  animation: meshDrift2 14s ease-in-out infinite;
 }
 
 .mesh-bg__blob--mint {
@@ -125,13 +127,26 @@ body::before {
   height: min(65vmax, 780px);
   top: 28%;
   right: -8%;
-  background: radial-gradient(circle, #3a8a6a 0%, #52a080 38%, rgba(82, 160, 128, 0.35) 60%, transparent 72%);
+  background: radial-gradient(circle, #6b706d 0%, #8f9491 38%, rgba(160, 165, 162, 0.4) 60%, transparent 72%);
   animation: meshDrift3 9s ease-in-out infinite;
 }
 
 @keyframes meshGradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%, 100% 50%;
+  }
+  25% {
+    background-position: 50% 0%, 0% 100%;
+  }
+  50% {
+    background-position: 100% 50%, 50% 0%;
+  }
+  75% {
+    background-position: 50% 100%, 100% 0%;
+  }
+  100% {
+    background-position: 0% 50%, 100% 50%;
+  }
 }
 
 @keyframes meshDrift1 {
