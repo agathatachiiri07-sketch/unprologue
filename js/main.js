@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js-animating');
+
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header');
   const menuBtn = document.getElementById('menuBtn');
