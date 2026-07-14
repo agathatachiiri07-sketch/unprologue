@@ -660,8 +660,15 @@ img {
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 28% 24%;
   display: block;
+}
+
+.member__photo-img--yuria {
+  object-position: 28% 24%;
+}
+
+.member__photo-img--agatha {
+  object-position: center 22%;
 }
 
 .member__photo-initial {
