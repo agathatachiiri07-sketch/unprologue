@@ -940,12 +940,26 @@ img {
   background-image: none;
 }
 
+.service-panel--nekomaneki .service-panel__media {
+  background-image: none;
+}
+
 .service-panel--kaishaneko .service-panel__image {
   opacity: 0.72;
   transform: scale(1);
 }
 
+.service-panel--nekomaneki .service-panel__image {
+  opacity: 0.72;
+  transform: scale(1);
+  object-position: 28% center;
+}
+
 .service-panel--kaishaneko .service-panel__media::after {
+  opacity: 0.28;
+}
+
+.service-panel--nekomaneki .service-panel__media::after {
   opacity: 0.28;
 }
 
@@ -980,8 +994,18 @@ img {
   opacity: 1;
 }
 
+.service-panel--nekomaneki:hover .service-panel__media,
+.service-panel--nekomaneki.is-active .service-panel__media {
+  opacity: 1;
+}
+
 .service-panel--kaishaneko:hover .service-panel__image,
 .service-panel--kaishaneko.is-active .service-panel__image {
+  opacity: 1;
+}
+
+.service-panel--nekomaneki:hover .service-panel__image,
+.service-panel--nekomaneki.is-active .service-panel__image {
   opacity: 1;
 }
 
