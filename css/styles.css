@@ -1639,11 +1639,12 @@ img {
    Contact
    ============================================ */
 .contact {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 52px 48px;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(48px, 6vw, 72px) clamp(32px, 5vw, 64px);
   position: relative;
   overflow: hidden;
 }
@@ -1652,13 +1653,26 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 0% 50%, rgba(255, 255, 255, 0.28) 0%, transparent 62%);
+  background:
+    radial-gradient(ellipse 55% 70% at 50% 42%, rgba(255, 255, 255, 0.34) 0%, transparent 68%),
+    radial-gradient(ellipse 40% 50% at 18% 78%, rgba(196, 164, 164, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 82% 78%, rgba(164, 180, 164, 0.1) 0%, transparent 70%);
   pointer-events: none;
+}
+
+.contact__orb-wrap {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 28px;
 }
 
 .contact__content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 520px;
 }
 
 .contact__eyebrow {
@@ -1668,39 +1682,22 @@ img {
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  margin-bottom: 14px;
-}
-
-.contact__title {
-  font-family: var(--font-en);
-  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  text-transform: none;
-  margin-bottom: 0;
-  color: var(--color-text);
-}
-
-.contact__rule {
-  height: 1px;
-  width: 56px;
-  background: var(--color-line);
-  margin: 22px 0 24px;
+  margin-bottom: 16px;
 }
 
 .contact__email {
   display: inline-block;
   font-family: var(--font-en);
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--color-text-light);
-  margin-bottom: 32px;
+  color: var(--color-text);
+  margin-bottom: 28px;
   transition: color var(--transition);
 }
 
 .contact__email:hover {
-  color: var(--color-text);
+  color: var(--color-text-light);
 }
 
 .contact__btn {
@@ -1716,17 +1713,8 @@ img {
   transform: translateX(4px);
 }
 
-.contact__visual {
-  position: relative;
-  z-index: 1;
-  height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .contact__orb {
-  width: min(100%, 280px);
+  width: clamp(96px, 14vw, 132px);
   aspect-ratio: 1;
   border-radius: 50%;
   background:
@@ -1734,10 +1722,10 @@ img {
     radial-gradient(circle at 50% 82%, rgba(255, 255, 255, 0.7) 0%, rgba(230, 235, 240, 0.2) 12%, transparent 28%),
     radial-gradient(circle at 42% 40%, #f4f6f8 0%, #d5dbe2 38%, #b8c1cb 100%);
   box-shadow:
-    0 0 60px rgba(255, 255, 255, 0.45),
-    0 24px 70px rgba(130, 145, 165, 0.14),
-    inset 0 -24px 50px rgba(110, 125, 145, 0.1),
-    inset 0 20px 45px rgba(255, 255, 255, 0.55);
+    0 0 48px rgba(255, 255, 255, 0.4),
+    0 18px 50px rgba(130, 145, 165, 0.12),
+    inset 0 -20px 40px rgba(110, 125, 145, 0.1),
+    inset 0 16px 36px rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.55);
   animation: contactOrbFloat 8s ease-in-out infinite;
 }
@@ -2144,17 +2132,11 @@ html.js-animating .fade-in:not(.fade-in--visible) {
   }
 
   .contact {
-    grid-template-columns: 1fr;
     padding: 40px 24px;
-    gap: 32px;
-  }
-
-  .contact__visual {
-    height: 180px;
   }
 
   .contact__orb {
-    width: min(70%, 220px);
+    width: 96px;
   }
 
   .footer__inner {
