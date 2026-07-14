@@ -52,6 +52,47 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => heroTitle.classList.add('fade-in--visible'));
   }
 
+  // Hero motto typing effect
+  const mottoJa = document.querySelector('.hero__motto-ja[data-typing]');
+  const mottoEn = document.querySelector('.hero__motto-en[data-typing]');
+
+  const typeMottoLine = (element, speed) => new Promise((resolve) => {
+    const text = element.dataset.typing || '';
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!text || reducedMotion) {
+      element.textContent = text;
+      resolve();
+      return;
+    }
+
+    element.textContent = '';
+    element.classList.add('hero__motto-line--typing');
+
+    let index = 0;
+    const step = () => {
+      if (index < text.length) {
+        element.textContent += text[index];
+        index += 1;
+        setTimeout(step, speed);
+        return;
+      }
+
+      element.classList.remove('hero__motto-line--typing');
+      resolve();
+    };
+
+    step();
+  });
+
+  if (mottoJa && mottoEn) {
+    setTimeout(async () => {
+      await typeMottoLine(mottoJa, 110);
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      await typeMottoLine(mottoEn, 95);
+    }, 700);
+  }
+
   // Member accordion
   document.querySelectorAll('.member__toggle').forEach(toggle => {
     toggle.addEventListener('click', () => {

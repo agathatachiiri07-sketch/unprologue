@@ -366,6 +366,7 @@ img {
   font-weight: 500;
   letter-spacing: 0.14em;
   color: var(--color-text);
+  min-height: 1.5em;
 }
 
 .hero__motto-en {
@@ -375,6 +376,23 @@ img {
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+  min-height: 1.3em;
+}
+
+.hero__motto-line--typing::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 0.95em;
+  margin-left: 3px;
+  background: currentColor;
+  vertical-align: -0.06em;
+  animation: heroMottoCursor 1s step-end infinite;
+}
+
+@keyframes heroMottoCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .hero__title-sub {
@@ -2032,5 +2050,9 @@ html.js-animating .fade-in:not(.fade-in--visible) {
   .mesh-bg,
   .mesh-bg__blob {
     animation: none !important;
+  }
+
+  .hero__motto-line--typing::after {
+    animation: none;
   }
 }
