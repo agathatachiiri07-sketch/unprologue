@@ -960,7 +960,7 @@ img {
 .service-panel--nekomaneki .service-panel__image {
   opacity: 0.72;
   transform: scale(1);
-  object-position: 28% center;
+  object-position: center 72%;
 }
 
 .service-panel--nprologue .service-panel__image {
