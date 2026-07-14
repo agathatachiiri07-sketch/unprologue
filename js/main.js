@@ -18,11 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!meshBg || reducedMotion.matches) return;
 
     const scrollY = window.scrollY;
-    const orbSpeeds = [0.1, 0.05, 0.08];
+    const orbSpeeds = [0.035, 0.03, 0.032];
 
-    meshBg.style.setProperty('--mesh-shift-y', `${scrollY * 0.06}px`);
     meshOrbs.forEach((orb, index) => {
-      orb.style.setProperty('--orb-shift', `${scrollY * (orbSpeeds[index] || 0.06)}px`);
+      orb.style.setProperty('--orb-shift', `${scrollY * (orbSpeeds[index] || 0.03)}px`);
     });
     meshTicking = false;
   };

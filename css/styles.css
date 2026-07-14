@@ -53,7 +53,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background: #c5cad0;
+  background: #d2d8df;
 }
 
 body {
@@ -92,8 +92,6 @@ body::before {
     radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.55) 0%, transparent 55%),
     radial-gradient(ellipse 100% 70% at 50% 100%, rgba(180, 190, 205, 0.35) 0%, transparent 50%),
     linear-gradient(180deg, #b4bac2 0%, #d2d8df 42%, #e6eaef 68%, #bec5cd 100%);
-  transform: translate3d(0, var(--mesh-shift-y, 0px), 0);
-  will-change: transform;
 }
 
 .mesh-bg__orbs {
@@ -105,7 +103,7 @@ body::before {
   position: absolute;
   left: 50%;
   border-radius: 50%;
-  transform: translateX(-50%) translateY(var(--orb-shift, 0px));
+  transform: translate3d(-50%, var(--orb-shift, 0px), 0);
   background:
     radial-gradient(circle at 50% 14%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.42) 10%, transparent 24%),
     radial-gradient(circle at 50% 88%, rgba(255, 255, 255, 0.82) 0%, rgba(236, 240, 245, 0.28) 12%, transparent 26%),
@@ -116,6 +114,7 @@ body::before {
     inset 0 -36px 70px rgba(110, 125, 145, 0.14),
     inset 0 28px 60px rgba(255, 255, 255, 0.62);
   opacity: 0.94;
+  backface-visibility: hidden;
   will-change: transform;
 }
 
@@ -142,38 +141,19 @@ body::before {
   animation: meshOrbFloatBottom 20s ease-in-out infinite;
 }
 
-.mesh-bg__sheen {
-  position: absolute;
-  left: 50%;
-  width: min(72vw, 760px);
-  height: 2px;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.85) 50%, transparent 100%);
-  filter: blur(1px);
-  opacity: 0.7;
-}
-
-.mesh-bg__sheen--upper {
-  top: 31%;
-}
-
-.mesh-bg__sheen--lower {
-  top: 69%;
-}
-
 @keyframes meshOrbFloatTop {
-  0%, 100% { transform: translateX(-50%) translateY(var(--orb-shift, 0px)); }
-  50% { transform: translateX(-50%) translateY(calc(var(--orb-shift, 0px) + 18px)); }
+  0%, 100% { transform: translate3d(-50%, var(--orb-shift, 0px), 0); }
+  50% { transform: translate3d(-50%, calc(var(--orb-shift, 0px) + 12px), 0); }
 }
 
 @keyframes meshOrbFloatCenter {
-  0%, 100% { transform: translateX(-50%) translateY(var(--orb-shift, 0px)); }
-  50% { transform: translateX(-50%) translateY(calc(var(--orb-shift, 0px) - 14px)); }
+  0%, 100% { transform: translate3d(-50%, var(--orb-shift, 0px), 0); }
+  50% { transform: translate3d(-50%, calc(var(--orb-shift, 0px) - 10px), 0); }
 }
 
 @keyframes meshOrbFloatBottom {
-  0%, 100% { transform: translateX(-50%) translateY(var(--orb-shift, 0px)); }
-  50% { transform: translateX(-50%) translateY(calc(var(--orb-shift, 0px) + 16px)); }
+  0%, 100% { transform: translate3d(-50%, var(--orb-shift, 0px), 0); }
+  50% { transform: translate3d(-50%, calc(var(--orb-shift, 0px) + 10px), 0); }
 }
 
 a {
