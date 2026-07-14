@@ -1647,23 +1647,112 @@ img {
    Contact
    ============================================ */
 .contact {
-  text-align: left;
-  padding: 56px 48px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  padding: 52px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 0% 50%, rgba(255, 255, 255, 0.28) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.contact__content {
+  position: relative;
+  z-index: 1;
+}
+
+.contact__eyebrow {
+  font-family: var(--font-en);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
 }
 
 .contact__title {
   font-family: var(--font-en);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: var(--letter-label);
-  text-transform: uppercase;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: none;
   margin-bottom: 0;
+  color: var(--color-text);
 }
 
 .contact__rule {
   height: 1px;
+  width: 56px;
   background: var(--color-line);
-  margin: 18px 0 32px;
+  margin: 22px 0 24px;
+}
+
+.contact__email {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text-light);
+  margin-bottom: 32px;
+  transition: color var(--transition);
+}
+
+.contact__email:hover {
+  color: var(--color-text);
+}
+
+.contact__btn {
+  gap: 12px;
+}
+
+.contact__btn-arrow {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.contact__btn:hover .contact__btn-arrow {
+  transform: translateX(4px);
+}
+
+.contact__visual {
+  position: relative;
+  z-index: 1;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__orb {
+  width: min(100%, 280px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.35) 14%, transparent 30%),
+    radial-gradient(circle at 50% 82%, rgba(255, 255, 255, 0.7) 0%, rgba(230, 235, 240, 0.2) 12%, transparent 28%),
+    radial-gradient(circle at 42% 40%, #f4f6f8 0%, #d5dbe2 38%, #b8c1cb 100%);
+  box-shadow:
+    0 0 60px rgba(255, 255, 255, 0.45),
+    0 24px 70px rgba(130, 145, 165, 0.14),
+    inset 0 -24px 50px rgba(110, 125, 145, 0.1),
+    inset 0 20px 45px rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  animation: contactOrbFloat 8s ease-in-out infinite;
+}
+
+@keyframes contactOrbFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .contact__desc {
@@ -2072,7 +2161,17 @@ html.js-animating .fade-in:not(.fade-in--visible) {
   }
 
   .contact {
+    grid-template-columns: 1fr;
     padding: 40px 24px;
+    gap: 32px;
+  }
+
+  .contact__visual {
+    height: 180px;
+  }
+
+  .contact__orb {
+    width: min(70%, 220px);
   }
 
   .footer__inner {
@@ -2095,6 +2194,10 @@ html.js-animating .fade-in:not(.fade-in--visible) {
 @media (prefers-reduced-motion: reduce) {
   .mesh-bg,
   .mesh-bg__orb {
+    animation: none !important;
+  }
+
+  .contact__orb {
     animation: none !important;
   }
 
