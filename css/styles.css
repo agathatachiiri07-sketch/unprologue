@@ -948,6 +948,10 @@ img {
   background-image: none;
 }
 
+.service-panel--consultation .service-panel__media {
+  background-image: none;
+}
+
 .service-panel--kaishaneko .service-panel__image {
   opacity: 0.72;
   transform: scale(1);
@@ -965,6 +969,12 @@ img {
   object-position: center 22%;
 }
 
+.service-panel--consultation .service-panel__image {
+  opacity: 0.72;
+  transform: scale(1);
+  object-position: center 42%;
+}
+
 .service-panel--kaishaneko .service-panel__media::after {
   opacity: 0.28;
 }
@@ -974,6 +984,10 @@ img {
 }
 
 .service-panel--nprologue .service-panel__media::after {
+  opacity: 0.28;
+}
+
+.service-panel--consultation .service-panel__media::after {
   opacity: 0.28;
 }
 
@@ -1018,6 +1032,11 @@ img {
   opacity: 1;
 }
 
+.service-panel--consultation:hover .service-panel__media,
+.service-panel--consultation.is-active .service-panel__media {
+  opacity: 1;
+}
+
 .service-panel--kaishaneko:hover .service-panel__image,
 .service-panel--kaishaneko.is-active .service-panel__image {
   opacity: 1;
@@ -1030,6 +1049,11 @@ img {
 
 .service-panel--nprologue:hover .service-panel__image,
 .service-panel--nprologue.is-active .service-panel__image {
+  opacity: 1;
+}
+
+.service-panel--consultation:hover .service-panel__image,
+.service-panel--consultation.is-active .service-panel__image {
   opacity: 1;
 }
 
