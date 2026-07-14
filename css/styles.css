@@ -1663,7 +1663,7 @@ img {
 .contact__rule {
   height: 1px;
   background: var(--color-line);
-  margin: 18px 0 28px;
+  margin: 18px 0 32px;
 }
 
 .contact__desc {
