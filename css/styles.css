@@ -932,6 +932,15 @@ img {
   transition: opacity 0.55s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.service-panel--kaishaneko .service-panel__media {
+  opacity: 0.62;
+  transform: scale(1);
+}
+
+.service-panel--kaishaneko .service-panel__media::after {
+  opacity: 0.28;
+}
+
 .service-panel__media::after {
   content: '';
   position: absolute;
@@ -950,6 +959,11 @@ img {
 .service-panel.is-active .service-panel__media {
   opacity: 1;
   transform: scale(1);
+}
+
+.service-panel--kaishaneko:hover .service-panel__media,
+.service-panel--kaishaneko.is-active .service-panel__media {
+  opacity: 1;
 }
 
 .service-panel:hover .service-panel__media::after,

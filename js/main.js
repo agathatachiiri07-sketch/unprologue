@@ -86,11 +86,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (mottoJa && mottoEn) {
-    setTimeout(async () => {
-      await typeMottoLine(mottoJa, 110);
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      await typeMottoLine(mottoEn, 95);
-    }, 700);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reducedMotion) {
+      mottoJa.textContent = mottoJa.dataset.typing || mottoJa.textContent;
+      mottoEn.textContent = mottoEn.dataset.typing || mottoEn.textContent;
+    } else {
+      setTimeout(async () => {
+        mottoJa.textContent = '';
+        mottoEn.textContent = '';
+        await typeMottoLine(mottoJa, 110);
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        await typeMottoLine(mottoEn, 95);
+      }, 400);
+    }
   }
 
   // Member accordion
