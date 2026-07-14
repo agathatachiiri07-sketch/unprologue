@@ -53,7 +53,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background: #d8dbd9;
+  background: #c5cad0;
 }
 
 body {
@@ -80,7 +80,7 @@ body::before {
 }
 
 /* ============================================
-   Animated mesh background
+   Premium futuristic sphere background
    ============================================ */
 .mesh-bg {
   position: fixed;
@@ -89,81 +89,91 @@ body::before {
   pointer-events: none;
   overflow: hidden;
   background:
-    linear-gradient(125deg, #c2c7c4 0%, #d4d8d5 24%, #e4e7e5 52%, #eef0ef 76%, #f7f8f7 100%),
-    linear-gradient(305deg, #b0b5b2 0%, #c8ccc9 38%, #dce0dd 68%, #f0f2f1 100%);
-  background-size: 320% 320%, 280% 280%;
-  background-position: var(--mesh-pos-1, 0% 50%), var(--mesh-pos-2, 100% 50%);
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 70% at 50% 100%, rgba(180, 190, 205, 0.35) 0%, transparent 50%),
+    linear-gradient(180deg, #b4bac2 0%, #d2d8df 42%, #e6eaef 68%, #bec5cd 100%);
   transform: translate3d(0, var(--mesh-shift-y, 0px), 0);
-  will-change: transform, background-position;
-}
-
-.mesh-bg__blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(56px);
   will-change: transform;
-  opacity: 0.75;
-  mix-blend-mode: normal;
 }
 
-.mesh-bg__blob--green {
-  width: min(95vmax, 1200px);
-  height: min(95vmax, 1200px);
-  top: -28%;
-  left: -22%;
-  background: radial-gradient(circle, #b8bdba 0%, #cdd1ce 38%, rgba(210, 214, 211, 0.45) 58%, transparent 74%);
-  animation: meshDrift1 11s ease-in-out infinite;
+.mesh-bg__orbs {
+  position: absolute;
+  inset: 0;
 }
 
-.mesh-bg__blob--grey {
-  width: min(90vmax, 1100px);
-  height: min(90vmax, 1100px);
-  bottom: -32%;
-  right: -24%;
-  background: radial-gradient(circle, #ffffff 0%, #f2f4f3 42%, rgba(228, 231, 229, 0.55) 62%, transparent 76%);
-  animation: meshDrift2 14s ease-in-out infinite;
+.mesh-bg__orb {
+  position: absolute;
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(var(--orb-shift, 0px));
+  background:
+    radial-gradient(circle at 50% 14%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.42) 10%, transparent 24%),
+    radial-gradient(circle at 50% 88%, rgba(255, 255, 255, 0.82) 0%, rgba(236, 240, 245, 0.28) 12%, transparent 26%),
+    radial-gradient(circle at 44% 38%, #f6f8fa 0%, #dde3ea 34%, #c2cad4 72%, #aeb7c2 100%);
+  box-shadow:
+    0 0 90px rgba(255, 255, 255, 0.5),
+    0 36px 100px rgba(130, 145, 165, 0.16),
+    inset 0 -36px 70px rgba(110, 125, 145, 0.14),
+    inset 0 28px 60px rgba(255, 255, 255, 0.62);
+  opacity: 0.94;
+  will-change: transform;
 }
 
-.mesh-bg__blob--mint {
-  width: min(65vmax, 780px);
-  height: min(65vmax, 780px);
-  top: 28%;
-  right: -8%;
-  background: radial-gradient(circle, #c5cac7 0%, #d8dbd9 40%, rgba(220, 224, 221, 0.4) 62%, transparent 74%);
-  animation: meshDrift3 9s ease-in-out infinite;
+.mesh-bg__orb--top {
+  width: min(90vw, 940px);
+  height: min(90vw, 940px);
+  top: -44%;
+  animation: meshOrbFloatTop 22s ease-in-out infinite;
 }
 
-@keyframes meshGradientShift {
-  0% {
-    background-position: 0% 50%, 100% 50%;
-  }
-  25% {
-    background-position: 50% 0%, 0% 100%;
-  }
-  50% {
-    background-position: 100% 50%, 50% 0%;
-  }
-  75% {
-    background-position: 50% 100%, 100% 0%;
-  }
-  100% {
-    background-position: 0% 50%, 100% 50%;
-  }
+.mesh-bg__orb--center {
+  width: min(94vw, 1000px);
+  height: min(94vw, 1000px);
+  top: 16%;
+  z-index: 1;
+  animation: meshOrbFloatCenter 26s ease-in-out infinite;
 }
 
-@keyframes meshDrift1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(14vw, 12vh) scale(1.15); }
+.mesh-bg__orb--bottom {
+  width: min(90vw, 940px);
+  height: min(90vw, 940px);
+  top: 58%;
+  z-index: 0;
+  animation: meshOrbFloatBottom 20s ease-in-out infinite;
 }
 
-@keyframes meshDrift2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-12vw, -10vh) scale(1.12); }
+.mesh-bg__sheen {
+  position: absolute;
+  left: 50%;
+  width: min(72vw, 760px);
+  height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.85) 50%, transparent 100%);
+  filter: blur(1px);
+  opacity: 0.7;
 }
 
-@keyframes meshDrift3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-10vw, 8vh) scale(0.88); }
+.mesh-bg__sheen--upper {
+  top: 31%;
+}
+
+.mesh-bg__sheen--lower {
+  top: 69%;
+}
+
+@keyframes meshOrbFloatTop {
+  0%, 100% { transform: translateX(-50%) translateY(var(--orb-shift, 0px)); }
+  50% { transform: translateX(-50%) translateY(calc(var(--orb-shift, 0px) + 18px)); }
+}
+
+@keyframes meshOrbFloatCenter {
+  0%, 100% { transform: translateX(-50%) translateY(var(--orb-shift, 0px)); }
+  50% { transform: translateX(-50%) translateY(calc(var(--orb-shift, 0px) - 14px)); }
+}
+
+@keyframes meshOrbFloatBottom {
+  0%, 100% { transform: translateX(-50%) translateY(var(--orb-shift, 0px)); }
+  50% { transform: translateX(-50%) translateY(calc(var(--orb-shift, 0px) + 16px)); }
 }
 
 a {
@@ -2104,7 +2114,7 @@ html.js-animating .fade-in:not(.fade-in--visible) {
 
 @media (prefers-reduced-motion: reduce) {
   .mesh-bg,
-  .mesh-bg__blob {
+  .mesh-bg__orb {
     animation: none !important;
   }
 

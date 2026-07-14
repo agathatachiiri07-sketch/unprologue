@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=17">
+  <link rel="stylesheet" href="css/styles.css?v=18">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512">
   <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -20,11 +20,15 @@
 </head>
 <body>
 
-  <!-- Animated mesh background -->
+  <!-- Premium sphere background -->
   <div class="mesh-bg" aria-hidden="true">
-    <div class="mesh-bg__blob mesh-bg__blob--green"></div>
-    <div class="mesh-bg__blob mesh-bg__blob--grey"></div>
-    <div class="mesh-bg__blob mesh-bg__blob--mint"></div>
+    <div class="mesh-bg__orbs">
+      <div class="mesh-bg__orb mesh-bg__orb--top"></div>
+      <div class="mesh-bg__orb mesh-bg__orb--center"></div>
+      <div class="mesh-bg__orb mesh-bg__orb--bottom"></div>
+    </div>
+    <div class="mesh-bg__sheen mesh-bg__sheen--upper"></div>
+    <div class="mesh-bg__sheen mesh-bg__sheen--lower"></div>
   </div>
 
   <!-- Header -->
@@ -439,6 +443,6 @@
     <span>ページトップへ</span>
   </button>
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

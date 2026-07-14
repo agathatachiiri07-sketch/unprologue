@@ -12,24 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let meshTicking = false;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  const meshOrbs = document.querySelectorAll('.mesh-bg__orb');
+
   const updateMeshBackground = () => {
     if (!meshBg || reducedMotion.matches) return;
 
     const scrollY = window.scrollY;
-    const maxScroll = Math.max(
-      document.documentElement.scrollHeight - window.innerHeight,
-      1
-    );
-    const progress = scrollY / maxScroll;
+    const orbSpeeds = [0.1, 0.05, 0.08];
 
-    const pos1X = progress * 58;
-    const pos1Y = 28 + progress * 42;
-    const pos2X = 100 - progress * 52;
-    const pos2Y = 50 - progress * 38;
-
-    meshBg.style.setProperty('--mesh-pos-1', `${pos1X}% ${pos1Y}%`);
-    meshBg.style.setProperty('--mesh-pos-2', `${pos2X}% ${pos2Y}%`);
-    meshBg.style.setProperty('--mesh-shift-y', `${scrollY * 0.14}px`);
+    meshBg.style.setProperty('--mesh-shift-y', `${scrollY * 0.06}px`);
+    meshOrbs.forEach((orb, index) => {
+      orb.style.setProperty('--orb-shift', `${scrollY * (orbSpeeds[index] || 0.06)}px`);
+    });
     meshTicking = false;
   };
 
