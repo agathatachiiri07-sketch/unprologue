@@ -1565,22 +1565,6 @@ img {
 /* ============================================
    Company Summary — Premium editorial grid
    ============================================ */
-.section--company .section__header {
-  margin-bottom: 36px;
-}
-
-.section--company .section__title {
-  font-size: clamp(1.5rem, 3.2vw, 2rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  text-transform: none;
-}
-
-.section--company .section__rule {
-  width: 56px;
-  margin-top: 22px;
-}
-
 .company-summary {
   padding: 8px 32px;
   background: var(--glass-bg);
