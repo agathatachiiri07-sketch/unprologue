@@ -92,7 +92,9 @@ body::before {
     linear-gradient(125deg, #c2c7c4 0%, #d4d8d5 24%, #e4e7e5 52%, #eef0ef 76%, #f7f8f7 100%),
     linear-gradient(305deg, #b0b5b2 0%, #c8ccc9 38%, #dce0dd 68%, #f0f2f1 100%);
   background-size: 320% 320%, 280% 280%;
-  animation: meshGradientShift 10s ease-in-out infinite;
+  background-position: var(--mesh-pos-1, 0% 50%), var(--mesh-pos-2, 100% 50%);
+  transform: translate3d(0, var(--mesh-shift-y, 0px), 0);
+  will-change: transform, background-position;
 }
 
 .mesh-bg__blob {
