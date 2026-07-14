@@ -944,6 +944,10 @@ img {
   background-image: none;
 }
 
+.service-panel--nprologue .service-panel__media {
+  background-image: none;
+}
+
 .service-panel--kaishaneko .service-panel__image {
   opacity: 0.72;
   transform: scale(1);
@@ -955,11 +959,21 @@ img {
   object-position: 28% center;
 }
 
+.service-panel--nprologue .service-panel__image {
+  opacity: 0.72;
+  transform: scale(1);
+  object-position: center 22%;
+}
+
 .service-panel--kaishaneko .service-panel__media::after {
   opacity: 0.28;
 }
 
 .service-panel--nekomaneki .service-panel__media::after {
+  opacity: 0.28;
+}
+
+.service-panel--nprologue .service-panel__media::after {
   opacity: 0.28;
 }
 
@@ -999,6 +1013,11 @@ img {
   opacity: 1;
 }
 
+.service-panel--nprologue:hover .service-panel__media,
+.service-panel--nprologue.is-active .service-panel__media {
+  opacity: 1;
+}
+
 .service-panel--kaishaneko:hover .service-panel__image,
 .service-panel--kaishaneko.is-active .service-panel__image {
   opacity: 1;
@@ -1006,6 +1025,11 @@ img {
 
 .service-panel--nekomaneki:hover .service-panel__image,
 .service-panel--nekomaneki.is-active .service-panel__image {
+  opacity: 1;
+}
+
+.service-panel--nprologue:hover .service-panel__image,
+.service-panel--nprologue.is-active .service-panel__image {
   opacity: 1;
 }
 
