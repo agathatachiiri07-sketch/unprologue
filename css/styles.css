@@ -608,7 +608,7 @@ img {
    ============================================ */
 .members {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 230px));
+  grid-template-columns: minmax(0, 230px);
   gap: 72px;
   margin-top: 40px;
   width: fit-content;
@@ -664,10 +664,6 @@ img {
 
 .member__photo-img--yuria {
   object-position: center 32%;
-}
-
-.member__photo-img--agatha {
-  object-position: center 18%;
 }
 
 .member__photo-initial {
