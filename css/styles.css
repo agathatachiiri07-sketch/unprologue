@@ -617,6 +617,14 @@ img {
   margin-right: auto;
 }
 
+.members--single {
+  grid-template-columns: minmax(0, 230px);
+}
+
+.member[hidden] {
+  display: none;
+}
+
 .member {
   position: relative;
   display: flex;
